@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "humanlifesim"
+version = "1.0.0"
+description = "An educational agent-based simulation of a fictional human society."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "Sam3360" }]
+dependencies = [
+    "numpy>=1.26",
+    "pandas>=2.1",
+    "plotly>=5.20",
+    "streamlit>=1.36",
+]
+
+[project.scripts]
+humanlifesim = "humanlifesim.cli:main"
+
+[tool.setuptools.packages.find]
+include = ["humanlifesim*"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
